@@ -23,11 +23,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running ✅' });
 });
 
-// Import routes (will be created next)
-// const categoryRoutes = require('./routes/categories');
-// const productRoutes = require('./routes/products');
-// app.use('/api/categories', categoryRoutes);
-// app.use('/api/products', productRoutes);
+// Import routes
+const categoryRoutes = require('./routes/categories');
+const productRoutes = require('./routes/products');
+app.use('/api/categories', categoryRoutes);
+app.use('/api/products', productRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
