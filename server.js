@@ -10,8 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static files for images
+// Static files for images and public frontend
 app.use('/Images', express.static('Images'));
+app.use(express.static('public'));
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/bluebell')
